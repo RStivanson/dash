@@ -6,6 +6,9 @@
 
 const int BUFFER_SIZE = 256;
 
+/// <summary>
+/// Gets the current working directory
+/// </summary>
 char * GetCWD() {
 	// Try to get the current wokring directory
 	char * buf = (char *)malloc(BUFFER_SIZE);
@@ -14,10 +17,16 @@ char * GetCWD() {
 	return buf;
 }
 
+/// <summary>
+/// Gets the base directory name of the current working directory
+/// </summary>
 char * GetBasename() {
 	return basename(GetCWD());
 }
 
+/// <summary>
+/// Gets the hostname of the local programmer
+/// </summary>
 char * GetHostname() {
 	char * hostname = (char *)malloc(BUFFER_SIZE);
 	gethostname(hostname, BUFFER_SIZE);
@@ -25,6 +34,9 @@ char * GetHostname() {
 	return hostname;
 }
 
+/// <summary>
+/// Go up to the parent directory
+/// </summary>
 int GoUp() {
 	int result = 0;
 	
@@ -37,6 +49,10 @@ int GoUp() {
 	return result;
 }
 
+/// <summary>
+/// Go down to the given directory, if it exists
+/// </summary>
+/// <param name="char">Name of directory</param>
 int GoDown(const char * dir) {
 	int result = 0;
 	
@@ -49,6 +65,10 @@ int GoDown(const char * dir) {
 	return result;
 }
 
+/// <summary>
+/// Navigate to a path in the file system
+/// </summary>
+/// <param name="char">The path to navigate to in the file system</param>
 int GoToPath(const char * path) {
 	int result = 0;
 	
@@ -61,6 +81,9 @@ int GoToPath(const char * path) {
 	return result;
 }
 
+/// <summary>
+/// Go to the local users home directory
+/// </summary>
 int GoHome() {
 	int result = 0;
 	
