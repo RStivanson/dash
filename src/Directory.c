@@ -52,7 +52,7 @@ int GoUp() {
 /// <summary>
 /// Go down to the given directory, if it exists
 /// </summary>
-/// <param name="char">Name of directory</param>
+/// <param name="dir">Name of directory</param>
 int GoDown(const char * dir) {
 	int result = 0;
 	
@@ -68,7 +68,7 @@ int GoDown(const char * dir) {
 /// <summary>
 /// Navigate to a path in the file system
 /// </summary>
-/// <param name="char">The path to navigate to in the file system</param>
+/// <param name="path">The path to navigate to in the file system</param>
 int GoToPath(const char * path) {
 	int result = 0;
 	
